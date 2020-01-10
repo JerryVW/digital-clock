@@ -5,18 +5,21 @@ window.onload = function() {
 
 function time() {
     let today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    let date = (today.getMonth() + 1) + " " + today.getDate() + ", " + today.getFullYear();
+    let hours = today.getHours() % 12;
+    let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
+    let date = today.toDateString();
+    let time = (today.getHours() < 10 ? "0" : "") + today.getHours() + 
+                ":" + (today.getMinutes() < 10 ? "0" : "") + today.getMinutes() + 
+                ":" + (today.getSeconds() < 10 ? "0" : "") + today.getSeconds() +
+                " " + (hours >= 12 ? "PM" : "AM");
+                 
     
     time = document.getElementById("time").innerHTML = time;
     date = document.getElementById("date").innerHTML = date;
 
-    let clockTick = function() {
-        today.getSeconds()++;
-        return setInterval(clockTick, 1000);
-    }
-
-    console.log(clockTick());
+    
 }
-
+setInterval(time, 1000);
+ 
