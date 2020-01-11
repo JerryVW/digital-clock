@@ -5,12 +5,14 @@
     box-sizing: border-box;
 }
 
+
 body {
     background-image: url(img/clock_background.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .container {
@@ -22,7 +24,7 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #020202;
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 400;
-    font-family: 'Times New Roman', Times, serif;
+    
 }
