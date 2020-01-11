@@ -8,8 +8,8 @@ function clock() {
     let today = new Date();
     let hours = today.getHours();
     let timeShift = hours >= 12 ? "PM" : "AM";
-    let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
     //let date = today.toDateString();
     
