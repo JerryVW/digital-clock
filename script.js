@@ -1,11 +1,7 @@
-
-window.onload = function() {
-    clock();
-    
-}
+clock();
+window.onload = setInterval(clock, 1000);;
 
 function clock() {
-    function timer() {
         let today = new Date();
         let hours = today.getHours();
         let minutes = today.getMinutes();
@@ -15,16 +11,22 @@ function clock() {
         hours = hours ? hours : 12;
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        let time = hours + ":" + minutes + ":" + seconds + " " + timeShift; 
+        let time =  `${hours}:${minutes}:${seconds} ${timeShift}`; 
         document.getElementById("time").innerHTML = time;
-    }
-    timer();
-    setInterval(timer, 1000); 
 
-    let today = new Date();
+        
+        let date = `${getDay(today)} ${getMonth(today)} ${today.getDate()}, ${today.getFullYear()}`;
+        document.getElementById("date").innerHTML = date; 
+}
+
+function getDay(date) {
     const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return day[date.getDay()];
+}
+
+function getMonth(date) {
     const month = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    let date = day[today.getDay()] + " " + month[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
-    document.getElementById("date").innerHTML = date; 
+    return month[date.getMonth()]
 }
