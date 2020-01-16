@@ -1,7 +1,7 @@
-# Vanilla Javascript digital-clock
-First project for Software Development class
+# Vanilla Javascript digital clock
+Digital clock built with HTML, CSS and Javascript
 
-You can see it live at jerryvw/github.io
+You can see it live at [jerryvw.github.io](https://jerryvw.github.io)
 
 <img src="img/clock_snapshot.jpg">
 
